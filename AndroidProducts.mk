@@ -26,4 +26,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_t1000.mk
+    $(LOCAL_DIR)/device_us9230e1.mk
