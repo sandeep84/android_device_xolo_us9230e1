@@ -11,8 +11,8 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, device/xolo/t1000/device_t1000.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := t1000
-PRODUCT_NAME := cm_t1000
+PRODUCT_DEVICE := us9230e1
+PRODUCT_NAME := cm_us9230e1
 PRODUCT_BRAND := xolo
 PRODUCT_MODEL := t1000
 PRODUCT_MANUFACTURER := xolo
