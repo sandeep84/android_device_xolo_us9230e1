@@ -21,4 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 
-add_lunch_combo cm_t1000-userdebug
+add_lunch_combo cm_us9230e1-userdebug
