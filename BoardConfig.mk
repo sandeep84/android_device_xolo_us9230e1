@@ -49,6 +49,6 @@ TARGET_PREBUILT_KERNEL := device/xolo/us9230e1/kernel
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 ## Recovery
-BOARD_CUSTOM_GRAPHICS := ../../../device/xolo/t1000/recovery/graphics.c
-TARGET_RECOVERY_INITRC := device/xolo/t1000/recovery/recovery.rc
-TARGET_RECOVERY_FSTAB := device/xolo/t1000/recovery/recovery.fstab
+BOARD_CUSTOM_GRAPHICS := ../../../device/xolo/us9230e1/recovery/graphics.c
+TARGET_RECOVERY_INITRC := device/xolo/us9230e1/recovery/recovery.rc
+TARGET_RECOVERY_FSTAB := device/xolo/us9230e1/recovery/recovery.fstab
