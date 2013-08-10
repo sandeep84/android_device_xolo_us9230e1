@@ -15,7 +15,7 @@
 # BoardConfig.mk
 
 # Inlude most specefic first
-include device/xolo/t1000/common.mk
+include device/xolo/us9230e1/common.mk
 
 # Product-specific compile-time definitions.
 
