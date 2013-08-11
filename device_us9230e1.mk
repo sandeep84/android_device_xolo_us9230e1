@@ -22,3 +22,15 @@ $(call inherit-product, build/target/product/full.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_us9230e1
 PRODUCT_DEVICE := us9230e1
+
+
+WIFI_BAND := 802_11_BG
+ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+ 
+ PRODUCT_PROPERTY_OVERRIDES := \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15 \
+    tf.enable=y \
+    drm.service.enabled=true
+    
+    
