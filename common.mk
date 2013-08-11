@@ -22,9 +22,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
     
 PRODUCT_PACKAGES := \
-    lights.us9230e1 \
-    audio.primary.us9230e1 \
-    power.us9230e1 \
     audio.a2dp.default \
     audio.usb.default \
     librs_jni \
