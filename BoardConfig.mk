@@ -83,6 +83,8 @@ BOARD_EGL_CFG := device/xolo/us9230e1/prebuilt/lib/egl/egl.cfg
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUEDROID_VENDOR_CONF := device/xolo/us9230e1/bluetooth/vnd_bt.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xolo/us9230e1/bluetooth
 
 ## RIL
 TARGET_PROVIDES_LIBRIL := true
