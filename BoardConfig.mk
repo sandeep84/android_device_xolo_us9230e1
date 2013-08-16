@@ -66,15 +66,12 @@ TW_CUSTOM_POWER_BUTTON := 107
 # Wifi 
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wl12xx
 BOARD_HOSTAPD_DRIVER        := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE           := bcmdhd
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/fw_bcmdhd_p2p.bin"
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_wl12xx
+BOARD_WLAN_DEVICE           := wl12xx_mac80211
+WIFI_DRIVER_MODULE_NAME     := "wl12xx_sdio"
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wl12xx_sdio.ko"
 
 # Display/Graphics
 USE_OPENGL_RENDERER := true
@@ -88,6 +85,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/xolo/us9230e1/bluetooth
 
 ## RIL
 TARGET_PROVIDES_LIBRIL := true
-BOARD_USES_LEGACY_RIL := true
 BOARD_FORCE_RILD_AS_ROOT := true
 BOARD_MOBILEDATA_INTERFACE_NAME := "pdp0"
+
+# Vold / USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/fsl-tegra-udc/gadget/lun0/file
+
