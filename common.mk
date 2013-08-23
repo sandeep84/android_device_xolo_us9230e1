@@ -56,6 +56,8 @@ PRODUCT_COPY_FILES += \
 
 ## Touchscreen
 PRODUCT_COPY_FILES += \
+    device/xolo/us9230e1/prebuilt/usr/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \
+    device/xolo/us9230e1/prebuilt/usr/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \
     device/xolo/us9230e1/prebuilt/usr/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc
 
 # GPS conf
