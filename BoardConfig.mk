@@ -49,8 +49,8 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 
 ## Kernel / Prebuilt zImage
 TARGET_PREBUILT_KERNEL := device/xolo/us9230e1/kernel
-TARGET_KERNEL_SOURCE := kernel/tegra
-TARGET_KERNEL_CONFIG := xolo_cm_defconfig
+TARGET_KERNEL_SOURCE := kernel/US9230E1
+TARGET_KERNEL_CONFIG := cm_us9230e1_defconfig
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
