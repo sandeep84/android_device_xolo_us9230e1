@@ -9,7 +9,21 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/ramdisk/init.us9230e1.rc:root/init.us9230e1.rc \
     device/xolo/us9230e1/ramdisk/ueventd.us9230e1.rc:root/ueventd.us9230e1.rc \
-    device/xolo/us9230e1/ramdisk/init.us9230e1.usb.rc:root/init.us9230e1.usb.rc 
+    device/xolo/us9230e1/ramdisk/init.us9230e1.usb.rc:root/init.us9230e1.usb.rc \
+    device/xolo/us9230e1/ramdisk/fstab.us9230e1:root/fstab.us9230e1 \
+    device/xolo/us9230e1/ramdisk/sbin/adbd:root/sbin/adbd \
+    device/xolo/us9230e1/ramdisk/sbin/modembackup:root/sbin/modembackup \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_1.png:root/res/images/charger/battery_1.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_2.png:root/res/images/charger/battery_2.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_3.png:root/res/images/charger/battery_3.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_4.png:root/res/images/charger/battery_4.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_5.png:root/res/images/charger/battery_5.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_overheat.png:root/res/images/charger/battery_overheat.png \
+    device/xolo/us9230e1/ramdisk/res/images/charger/battery_overvolt.png:root/res/images/charger/battery_overvolt.png
+
 
 ## Hardware Specefic
 PRODUCT_COPY_FILES += \
@@ -24,7 +38,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
     
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     librs_jni \
@@ -32,28 +46,9 @@ PRODUCT_PACKAGES := \
     l2ping \
     hcitool \
     bttest \
-    com.android.future.usb.accessory    
+    com.android.future.usb.accessory \
+    hwcomposer.default
     
-# HW lib
-PRODUCT_COPY_FILES += \
-    device/xolo/us9230e1/prebuilt/lib/hw/gps.us9230e1.so:system/lib/hw/gps.us9230e1.so \
-    device/xolo/us9230e1/prebuilt/lib/hw/lights.us9230e1.so:system/lib/hw/lights.us9230e1.so \
-    device/xolo/us9230e1/prebuilt/lib/hw/sensors.compass.us9230e1.so:system/lib/hw/sensors.compass.us9230e1.so \
-    device/xolo/us9230e1/prebuilt/lib/hw/sensors.us9230e1.so:system/lib/hw/sensors.us9230e1.so
-
-# EGL/lib
-PRODUCT_COPY_FILES += \
-    device/xolo/us9230e1/prebuilt/lib/egl/libEGL_perfhud.so:system/lib/egl/libEGL_perfhud.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libEGL_tegra_impl.so:system/lib/egl/libEGL_tegra_impl.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv1_CM_perfhud.so:system/lib/egl/libGLESv1_CM_perfhud.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv1_CM_tegra_impl.so:system/lib/egl/libGLESv1_CM_tegra_impl.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv2_perfhud.so:system/lib/egl/libGLESv2_perfhud.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so \
-    device/xolo/us9230e1/prebuilt/lib/egl/libGLESv2_tegra_impl.so:system/lib/egl/libGLESv2_tegra_impl.so \
-
 ## Touchscreen
 PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/prebuilt/usr/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \
@@ -71,6 +66,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Common assets
 PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += en
 
 # Media

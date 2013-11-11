@@ -8,7 +8,7 @@ PRODUCT_RELEASE_NAME := us9230e1
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Bootanimation flags
-TARGET_BOOTANIMATION_NAME := 720x1280
+TARGET_BOOTANIMATION_NAME := vertical-720x1280
 
 # Inherit device configuration
 $(call inherit-product, device/xolo/us9230e1/device_us9230e1.mk)

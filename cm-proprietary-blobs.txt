@@ -1,0 +1,76 @@
+# Copyright (C) 2012 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Sensors
+/system/lib/hw/sensors.compass.us9230e1.so:../../../vendor/xolo/us9230e1/proprietary/hw/sensors.compass.us9230e1.so
+/system/lib/hw/sensors.us9230e1.so:../../../vendor/xolo/us9230e1/proprietary/hw/sensors.us9230e1.so
+/system/lib/libsensors.akm.so:../../../vendor/xolo/us9230e1/proprietary/libsensors.akm.so
+/system/lib/libsensors.apds9900.so:../../../vendor/xolo/us9230e1/proprietary/libsensors.apds9900.so
+/system/lib/libsensors.base.so:../../../vendor/xolo/us9230e1/proprietary/libsensors.base.so
+/system/lib/libsensors.hwmon.so:../../../vendor/xolo/us9230e1/proprietary/libsensors.hwmon.so
+/system/lib/libsensors.kionix.so:../../../vendor/xolo/us9230e1/proprietary/libsensors.kionix.so
+/system/lib/libsensorservice.so:../../../vendor/xolo/us9230e1/proprietary/libsensorservice.so
+
+# Audio
+/system/lib/hw/audio.a2dp.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio.a2dp.default.so
+/system/lib/hw/audio.primary.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio.primary.default.so
+/system/lib/hw/audio.primary.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio.primary.tegra.so
+/system/lib/hw/audio.usb.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio.usb.default.so
+/system/lib/hw/audio_policy.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio_policy.default.so
+/system/lib/hw/audio_policy.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/audio_policy.tegra.so
+
+# Camera
+/system/lib/hw/camera.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/camera.tegra.so
+
+# 2D
+/system/lib/hw/gralloc.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/gralloc.default.so
+/system/lib/hw/gralloc.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/gralloc.tegra.so
+/system/lib/hw/hwcomposer.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/hwcomposer.tegra.so
+/system/lib/libnvddk_2d.so:../../../vendor/xolo/us9230e1/proprietary/libnvddk_2d.so
+/system/lib/libnvddk_2d_v2.so:../../../vendor/xolo/us9230e1/proprietary/libnvddk_2d_v2.so
+/system/lib/libnvrm.so:../../../vendor/xolo/us9230e1/proprietary/libnvrm.so
+/system/lib/libnvrm_graphics.so:../../../vendor/xolo/us9230e1/proprietary/libnvrm_graphics.so
+/system/lib/libnvos.so:../../../vendor/xolo/us9230e1/proprietary/libnvos.so
+
+# EGL
+/system/lib/egl/egl.cfg:../../../vendor/xolo/us9230e1/proprietary/egl/egl.cfg
+/system/lib/egl/libEGL_perfhud.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_perfhud.so
+/system/lib/egl/libEGL_tegra.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra.so
+/system/lib/egl/libEGL_tegra_impl.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra_impl.so
+/system/lib/egl/libGLES_android.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLES_android.so
+/system/lib/egl/libGLESv1_CM_perfhud.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_perfhud.so
+/system/lib/egl/libGLESv1_CM_tegra.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_tegra.so
+/system/lib/egl/libGLESv1_CM_tegra_impl.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_tegra_impl.so
+/system/lib/egl/libGLESv2_perfhud.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv2_perfhud.so
+/system/lib/egl/libGLESv2_tegra.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv2_tegra.so
+/system/lib/egl/libGLESv2_tegra_impl.so:../../../vendor/xolo/us9230e1/proprietary/egl/libGLESv2_tegra_impl.so
+
+# NFC
+/system/lib/hw/nfc.tegra.so:../../../vendor/xolo/us9230e1/proprietary/hw/nfc.tegra.so
+
+# Misc
+/system/lib/hw/lights.us9230e1.so:../../../vendor/xolo/us9230e1/proprietary/hw/lights.us9230e1.so
+/system/lib/hw/keystore.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/keystore.default.so
+/system/lib/hw/local_time.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/local_time.default.so
+/system/lib/hw/power.default.so:../../../vendor/xolo/us9230e1/proprietary/hw/power.default.so
+/system/lib/libardrv_dynamic.so:../../../vendor/xolo/us9230e1/proprietary/libardrv_dynamic.so
+/vendor/lib/libwvm.so:../../../vendor/xolo/us9230e1/proprietary/libwvm.so
+
+# GPS
+/system/lib/hw/gps.us9230e1.so:../../../vendor/xolo/us9230e1/proprietary/hw/gps.us9230e1.so
+/system/lib/libgps.so:../../../vendor/xolo/us9230e1/proprietary/libgps.so
+/system/lib/libgpsservices.so:../../../vendor/xolo/us9230e1/proprietary/libgpsservices.so
+/system/lib/libmcphalgps.so:../../../vendor/xolo/us9230e1/proprietary/libmcphalgps.so
+/system/lib/libsupllocationprovider.so:../../../vendor/xolo/us9230e1/proprietary/libsupllocationprovider.so
+

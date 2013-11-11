@@ -17,6 +17,9 @@
 # Inlude most specefic first
 include device/xolo/us9230e1/common.mk
 
+# Use the non-open-source parts, if they're present
+-include vendor/xolo/us9230e1/BoardConfigVendor.mk
+
 # Product-specific compile-time definitions.
 
 

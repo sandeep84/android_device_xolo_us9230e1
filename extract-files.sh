@@ -1,5 +1,6 @@
-#
-# Copyright (C) 2008 The Android Open Source Project
+#!/bin/bash
+
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,14 +13,26 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-# This file is executed by build/envsetup.sh, and can use anything
-# defined in envsetup.sh.
-#
-# In particular, you can add lunch options with the add_lunch_combo
-# function: add_lunch_combo generic-eng
+for FILE in `cat cm-proprietary-blobs.txt | grep -v "^#"`; do
+    # FILE format is src':'dest, so parse it
+    DEST=${FILE##*:}
+    saveIFS=$IFS
+    IFS=":"
+    SRC=($FILE)
+    IFS=$saveIFS
+    SRC=${SRC[0]}
 
+    # create the dest dir if necessary
+    DIR=`dirname $DEST`
+    if [ ! -d ${DIR} ]; then
+	echo mkdir -p ${DIR}
+        mkdir -p ${DIR}
+    fi
 
-add_lunch_combo cm_us9230e1-userdebug
-add_lunch_combo cm_us9230e1-eng
+    # pull the file off the device into dest
+    echo adb pull ${SRC} ${DEST}
+    adb pull ${SRC} ${DEST}
+done
+
+./setup-makefiles.sh

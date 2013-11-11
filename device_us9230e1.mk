@@ -25,18 +25,19 @@ PRODUCT_DEVICE := us9230e1
 
 
 WIFI_BAND := 802_11_BG
- $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
+
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
  
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=15 \
     tf.enable=y \
     drm.service.enabled=true
 
-PRODUCT_PACKAGES := \
-    wpa_supplicant
+PRODUCT_PACKAGES += \
+    wpa_supplicant \
+    bcmdhd_net_iface
 
-DEVICE_PACKAGE_OVERLAYS := \
+DEVICE_PACKAGE_OVERLAYS += \
     device/xolo/us9230e1/overlay
-    
     
