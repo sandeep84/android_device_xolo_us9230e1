@@ -44,7 +44,6 @@
 /system/lib/libnvos.so:../../../vendor/xolo/us9230e1/proprietary/libnvos.so
 
 # EGL
-/system/lib/egl/egl.cfg:../../../vendor/xolo/us9230e1/proprietary/egl/egl.cfg
 /system/lib/egl/libEGL_perfhud.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_perfhud.so
 /system/lib/egl/libEGL_tegra.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra.so
 /system/lib/egl/libEGL_tegra_impl.so:../../../vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra_impl.so
