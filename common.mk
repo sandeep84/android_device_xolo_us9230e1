@@ -1,6 +1,9 @@
 ## Copyright 2013 Android Open Source Project
 ## Common make file
 
+# Use the non-open-source parts, if they're present
+-include vendor/xolo/us9230e1/us9230e1-vendor-blobs.mk
+
 ## Recovery
 PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/recovery/fstab:recovery/root/etc/fstab
