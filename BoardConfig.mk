@@ -71,16 +71,33 @@ TW_CUSTOM_POWER_BUTTON := 107
 # Wifi 
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WLAN_DEVICE           := wl12xx_mac80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wl12xx
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_wl12xx
-BOARD_WLAN_DEVICE           := wl12xx_mac80211
 WIFI_DRIVER_MODULE_NAME     := "wl12xx_sdio"
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/wl12xx_sdio.ko"
+COMMON_GLOBAL_CFLAGS        += -DUSES_TI_MAC80211
+
+
+TARGET_MODULES_SOURCE := "hardware/ti/wlan/mac80211/compat_wl12xx"
+
+wifi_modules:
+	make -C $(TARGET_MODULES_SOURCE) KERNEL_DIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE)
+	mv $(KERNEL_OUT)/lib/crc7.ko $(KERNEL_MODULES_OUT)
+	mv hardware/ti/wlan/mac80211/compat_wl12xx/compat/compat.ko $(KERNEL_MODULES_OUT)
+	mv hardware/ti/wlan/mac80211/compat_wl12xx/net/mac80211/mac80211.ko $(KERNEL_MODULES_OUT)
+	mv hardware/ti/wlan/mac80211/compat_wl12xx/net/wireless/cfg80211.ko $(KERNEL_MODULES_OUT)
+	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx.ko $(KERNEL_MODULES_OUT)
+	mv hardware/ti/wlan/mac80211/compat_wl12xx/drivers/net/wireless/wl12xx/wl12xx_sdio.ko $(KERNEL_MODULES_OUT)
+	$(ARM_EABI_TOOLCHAIN)/arm-eabi-strip --strip-debug $(KERNEL_MODULES_OUT)/crc7.ko $(KERNEL_MODULES_OUT)/compat.ko $(KERNEL_MODULES_OUT)/mac80211.ko $(KERNEL_MODULES_OUT)/cfg80211.ko $(KERNEL_MODULES_OUT)/wl12xx.ko $(KERNEL_MODULES_OUT)/wl12xx_sdio.ko
+
+TARGET_KERNEL_MODULES := wifi_modules
 
 # Display/Graphics
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/xolo/us9230e1/prebuilt/lib/egl/egl.cfg
+BOARD_EGL_NEEDS_LEGACY_FB := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
