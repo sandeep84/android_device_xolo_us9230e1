@@ -99,3 +99,24 @@
 /system/bin/iw
 /system/bin/nvcpud
 /system/bin/fild
+
+#Kernel modules
+/system/lib/modules/baseband_usb_chr.ko
+/system/lib/modules/lib80211.ko
+/system/lib/modules/raw_ip_net.ko
+/system/lib/modules/tcrypt.ko
+/system/lib/modules/btwilink.ko
+/system/lib/modules/fm_drv.ko
+/system/lib/modules/mac80211.ko
+/system/lib/modules/scsi_wait_scan.ko
+/system/lib/modules/wl12xx.ko
+/system/lib/modules/cfg80211.ko
+/system/lib/modules/gps_drv.ko
+/system/lib/modules/mlan.ko
+/system/lib/modules/sd8xxx.ko
+/system/lib/modules/wl12xx_sdio.ko
+/system/lib/modules/compat/cfg80211.ko
+/system/lib/modules/compat/compat.ko
+/system/lib/modules/compat/mac80211.ko
+/system/lib/modules/compat/wl12xx.ko
+/system/lib/modules/compat/wl12xx_sdio.ko
