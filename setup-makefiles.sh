@@ -101,45 +101,14 @@ MAKEFILE=../../../$OUTDIR/BoardConfigPartial.mk
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# HW lib
-PRODUCT_COPY_FILES += \
-    vendor/xolo/us9230e1/proprietary/hw/gps.us9230e1.so:system/lib/hw/gps.us9230e1.so \
-    vendor/xolo/us9230e1/proprietary/libgps.so:system/lib/libgps.so \
-    vendor/xolo/us9230e1/proprietary/libgpsservices.so:system/lib/libgpsservices.so \
-    vendor/xolo/us9230e1/proprietary/libsupllocationprovider.so:system/lib/libsupllocationprovider.so \
-    vendor/xolo/us9230e1/proprietary/libmcphalgps.so:system/lib/libmcphalgps.so \
-    vendor/xolo/us9230e1/proprietary/hw/lights.us9230e1.so:system/lib/hw/lights.us9230e1.so \
-    vendor/xolo/us9230e1/proprietary/hw/hwcomposer.tegra.so:system/lib/hw/hwcomposer.tegra.so \
-    vendor/xolo/us9230e1/proprietary/hw/sensors.compass.us9230e1.so:system/lib/hw/sensors.compass.us9230e1.so \
-    vendor/xolo/us9230e1/proprietary/hw/sensors.us9230e1.so:system/lib/hw/sensors.us9230e1.so \
-    vendor/xolo/us9230e1/proprietary/libsensors.base.so:system/lib/libsensors.base.so \
-    vendor/xolo/us9230e1/proprietary/libsensors.akm.so:system/lib/libsensors.akm.so \
-    vendor/xolo/us9230e1/proprietary/libsensors.kionix.so:system/lib/libsensors.kionix.so \
-    vendor/xolo/us9230e1/proprietary/libsensors.apds9900.so:system/lib/libsensors.apds9900.so \
-    vendor/xolo/us9230e1/proprietary/libsensors.hwmon.so:system/lib/libsensors.hwmon.so \
-    vendor/xolo/us9230e1/proprietary/libwvm.so:vendor/lib/libwvm.so \
-
-# EGL/lib
-PRODUCT_COPY_FILES += \
-    vendor/xolo/us9230e1/proprietary/egl/libEGL_perfhud.so:system/lib/egl/libEGL_perfhud.so \
-    vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \
-    vendor/xolo/us9230e1/proprietary/egl/libEGL_tegra_impl.so:system/lib/egl/libEGL_tegra_impl.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_perfhud.so:system/lib/egl/libGLESv1_CM_perfhud.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv1_CM_tegra_impl.so:system/lib/egl/libGLESv1_CM_tegra_impl.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv2_perfhud.so:system/lib/egl/libGLESv2_perfhud.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so \
-    vendor/xolo/us9230e1/proprietary/egl/libGLESv2_tegra_impl.so:system/lib/egl/libGLESv2_tegra_impl.so \
-    vendor/xolo/us9230e1/proprietary/libnvos.so:system/lib/libnvos.so \
-    vendor/xolo/us9230e1/proprietary/libnvddk_2d.so:system/lib/libnvddk_2d.so \
-    vendor/xolo/us9230e1/proprietary/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \
-    vendor/xolo/us9230e1/proprietary/libnvrm.so:system/lib/libnvrm.so \
-    vendor/xolo/us9230e1/proprietary/libnvrm_graphics.so:system/lib/libnvrm_graphics.so \
-    vendor/xolo/us9230e1/proprietary/libardrv_dynamic.so:system/lib/libardrv_dynamic.so \
-
-
 EOF
+
+for FILE in `cat cm-proprietary-blobs.txt | grep -v "^#"`; do
+    SRC=vendor/xolo/us9230e1/proprietary/${FILE}
+    DEST=${FILE}
+
+    echo "PRODUCT_COPY_FILES += ${SRC}:${DEST}" >> $MAKEFILE
+done
 
 #--------------------------------------------------------------
 #  XOLO PROPS
@@ -408,36 +377,6 @@ LOCAL_PATH := \$(call my-dir)
 
 ifeq (\$(TARGET_DEVICE),us9230e1)
 
-include \$(CLEAR_VARS)
-LOCAL_MODULE := bcm2079x_firmware
-LOCAL_SRC_FILES := bcm2079x_firmware.ncd
-LOCAL_MODULE_SUFFIX := .ncd
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := broadcom
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := bcm2079x_pre_firmware
-LOCAL_SRC_FILES := bcm2079x_pre_firmware.ncd
-LOCAL_MODULE_SUFFIX := .ncd
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := broadcom
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := bcm43241
-LOCAL_SRC_FILES := bcm43241.hcd
-LOCAL_MODULE_SUFFIX := .hcd
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := broadcom
-include \$(BUILD_PREBUILT)
-
 endif
 EOF
 
@@ -460,11 +399,6 @@ MAKEFILE=../../../$OUTDIR/device-partial.mk
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Broadcom blob(s) necessary for Manta hardware
-PRODUCT_PACKAGES := \\
-    bcm2079x_firmware \\
-    bcm2079x_pre_firmware \\
-    bcm43241
 EOF
 
 MAKEFILE=../../../$OUTDIR/BoardConfigPartial.mk

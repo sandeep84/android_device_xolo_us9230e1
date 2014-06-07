@@ -1,6 +1,9 @@
 ## Copyright 2013 Android Open Source Project
 ## Common make file
 
+# Use the non-open-source parts, if they're present
+-include vendor/xolo/us9230e1/us9230e1-vendor-blobs.mk
+
 ## Recovery
 PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/recovery/fstab:recovery/root/etc/fstab
@@ -10,20 +13,6 @@ PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/ramdisk/init.us9230e1.rc:root/init.us9230e1.rc \
     device/xolo/us9230e1/ramdisk/ueventd.us9230e1.rc:root/ueventd.us9230e1.rc \
     device/xolo/us9230e1/ramdisk/init.us9230e1.usb.rc:root/init.us9230e1.usb.rc \
-    device/xolo/us9230e1/ramdisk/fstab.us9230e1:root/fstab.us9230e1 \
-    device/xolo/us9230e1/ramdisk/sbin/adbd:root/sbin/adbd \
-    device/xolo/us9230e1/ramdisk/sbin/modembackup:root/sbin/modembackup \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_0.png:root/res/images/charger/battery_0.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_1.png:root/res/images/charger/battery_1.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_2.png:root/res/images/charger/battery_2.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_3.png:root/res/images/charger/battery_3.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_4.png:root/res/images/charger/battery_4.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_5.png:root/res/images/charger/battery_5.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_charge.png:root/res/images/charger/battery_charge.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_overheat.png:root/res/images/charger/battery_overheat.png \
-    device/xolo/us9230e1/ramdisk/res/images/charger/battery_overvolt.png:root/res/images/charger/battery_overvolt.png
-
 
 ## Hardware Specefic
 PRODUCT_COPY_FILES += \
@@ -49,6 +38,10 @@ PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
     hwcomposer.default
     
+# EGL
+PRODUCT_COPY_FILES += \
+    device/xolo/us9230e1/prebuilt/lib/egl/egl.cfg:system/lib/egl/egl.cfg
+
 ## Touchscreen
 PRODUCT_COPY_FILES += \
     device/xolo/us9230e1/prebuilt/usr/idc/raydium_ts.idc:system/usr/idc/raydium_ts.idc \

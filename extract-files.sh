@@ -15,13 +15,8 @@
 # limitations under the License.
 
 for FILE in `cat cm-proprietary-blobs.txt | grep -v "^#"`; do
-    # FILE format is src':'dest, so parse it
-    DEST=${FILE##*:}
-    saveIFS=$IFS
-    IFS=":"
-    SRC=($FILE)
-    IFS=$saveIFS
-    SRC=${SRC[0]}
+    SRC=${FILE}
+    DEST=../../../vendor/xolo/us9230e1/proprietary/${FILE}
 
     # create the dest dir if necessary
     DIR=`dirname $DEST`
