@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -89,3 +89,13 @@
 /system/etc/firmware/ti-connectivity/wl128x-fw-4-sr.bin
 /system/etc/firmware/ti-connectivity/RFMD_S_3.5.ini
 
+# Misc executables
+/system/bin/uim-sysfs
+/system/bin/setup_fs
+/system/bin/protection
+/system/bin/root-service
+/system/bin/btmacwriter
+/system/bin/navd
+/system/bin/iw
+/system/bin/nvcpud
+/system/bin/fild
