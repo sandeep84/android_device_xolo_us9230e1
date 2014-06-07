@@ -32,6 +32,7 @@
 
 # Camera
 /system/lib/hw/camera.tegra.so
+/system/etc/nvcamera.conf
 
 # 2D
 /system/lib/hw/gralloc.default.so
@@ -89,6 +90,14 @@
 /system/etc/firmware/ti-connectivity/wl128x-fw-4-sr.bin
 /system/etc/firmware/ti-connectivity/RFMD_S_3.5.ini
 
+/system/vendor/firmware/app/secondary_boot.wrapped
+/system/vendor/firmware/app/tertiary_boot.wrapped
+/system/vendor/firmware/app/factory_tests.wrapped
+/system/vendor/firmware/app/modem.wrapped
+/system/vendor/firmware/data/config/audioConfig.bin
+/system/vendor/firmware/data/config/productConfig.bin
+
+
 # Misc executables
 /system/bin/uim-sysfs
 /system/bin/setup_fs
@@ -99,6 +108,7 @@
 /system/bin/iw
 /system/bin/nvcpud
 /system/bin/fild
+/system/bin/wifi_loader.sh
 
 #Kernel modules
 /system/lib/modules/baseband_usb_chr.ko
