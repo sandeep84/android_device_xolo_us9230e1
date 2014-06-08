@@ -23,14 +23,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_us9230e1
 PRODUCT_DEVICE := us9230e1
 
-
 WIFI_BAND := 802_11_BG
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15 \
-    tf.enable=y \
-    drm.service.enabled=true
+    wifi.interface=wlan0
 
 PRODUCT_PACKAGES += \
     wpa_supplicant

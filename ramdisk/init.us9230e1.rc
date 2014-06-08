@@ -104,7 +104,6 @@ on boot
     insmod /system/lib/modules/compat/cfg80211.ko
     insmod /system/lib/modules/compat/mac80211.ko
     insmod /system/lib/modules/compat/wl12xx.ko debug_level=0x62c00
-    insmod /system/lib/modules/compat/wl12xx_sdio.ko
     start add_p2p_iface
 
 # audio
@@ -211,7 +210,7 @@ on boot
 # disable ipv6.
 #    write /proc/sys/net/ipv6/conf/all/disable_ipv6 1
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -aABKL
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -338,7 +337,8 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-	-Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+	-Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
+        -e/data/misc/wifi/entropy.bin
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
 #   user wifi
