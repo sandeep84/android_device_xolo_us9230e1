@@ -4,7 +4,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#      http
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -74,26 +74,26 @@
 /system/lib/libmcphalgps.so
 /system/lib/libsupllocationprovider.so
 
-# Firmware
-/system/etc/firmware/nvavp_aud_ucode.bin
-/system/etc/firmware/fm_rx_ch8_1283.2.bts
-/system/etc/firmware/fmc_ch8_1283.2.bts
-/system/etc/firmware/nvavp_os_eff00000.bin
-/system/etc/firmware/fm_tx_ch8_1283.2.bts
-/system/etc/firmware/nvavp_vid_ucode.bin
-/system/etc/firmware/nvavp_os_0ff00000.bin
-/system/etc/firmware/TIInit_10.6.15.bts
-/system/etc/firmware/nvavp_vid_ucode_alt.bin
-/system/etc/firmware/ti-connectivity/wl128x-fw-4-plt.bin
-/system/etc/firmware/ti-connectivity/wl128x-fw-4-mr.bin
-/system/etc/firmware/ti-connectivity/wl1271-nvs.bin
-/system/etc/firmware/ti-connectivity/wl128x-fw-4-sr.bin
-/system/etc/firmware/ti-connectivity/RFMD_S_3.5.ini
 
-/system/vendor/firmware/app/secondary_boot.wrapped
-/system/vendor/firmware/app/tertiary_boot.wrapped
+# Firmware
+/system/etc/firmware/fmc_ch8_1283.2.bts
+/system/etc/firmware/fm_rx_ch8_1283.2.bts
+/system/etc/firmware/fm_tx_ch8_1283.2.bts
+/system/etc/firmware/nvavp_aud_ucode.bin
+/system/etc/firmware/nvavp_os_0ff00000.bin
+/system/etc/firmware/nvavp_os_eff00000.bin
+/system/etc/firmware/nvavp_vid_ucode_alt.bin
+/system/etc/firmware/nvavp_vid_ucode.bin
+/system/etc/firmware/ti-connectivity/RFMD_S_3.5.ini
+/system/etc/firmware/ti-connectivity/wl1271-nvs.bin
+/system/etc/firmware/ti-connectivity/wl128x-fw-4-mr.bin
+/system/etc/firmware/ti-connectivity/wl128x-fw-4-plt.bin
+/system/etc/firmware/ti-connectivity/wl128x-fw-4-sr.bin
+/system/etc/firmware/TIInit_10.6.15.bts
 /system/vendor/firmware/app/factory_tests.wrapped
 /system/vendor/firmware/app/modem.wrapped
+/system/vendor/firmware/app/secondary_boot.wrapped
+/system/vendor/firmware/app/tertiary_boot.wrapped
 /system/vendor/firmware/data/config/audioConfig.bin
 /system/vendor/firmware/data/config/productConfig.bin
 
